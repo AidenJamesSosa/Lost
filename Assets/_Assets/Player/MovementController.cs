@@ -41,7 +41,7 @@ public class MovementController : MonoBehaviour
     public void HandledMoveInput(InputAction.CallbackContext context)
     {
         mMoveInput = context.ReadValue<Vector2>();
-        Debug.Log($"Move input is: {mMoveInput}");
+        //Debug.Log($"Move input is: {mMoveInput}");
     }
     public void PerformJump(InputAction.CallbackContext context)
     {

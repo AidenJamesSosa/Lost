@@ -9,7 +9,7 @@ public class CameraRig : MonoBehaviour
     [SerializeField] float mPitchmin = -89f;
     [SerializeField] float mPitchMax = 89f;
 
-    
+
 
     [SerializeField] Transform mYawTransform;
     [SerializeField] Transform mPitchTransform;
@@ -36,5 +36,10 @@ public class CameraRig : MonoBehaviour
         mPitch = Mathf.Clamp(mPitch, mPitchmin, mPitchMax);
         mPitchTransform.localEulerAngles = new Vector3(mPitch, 0f, 0f);
 
+    }
+     internal void ResetViewAngle()
+    {
+        mPitch = 0f;
+        mYawTransform.localRotation = Quaternion.identity;
     }
 }

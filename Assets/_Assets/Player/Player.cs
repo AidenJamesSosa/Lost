@@ -1,12 +1,17 @@
 using UnityEngine;
+using System;
+using UnityEditor.Rendering.LookDev;
+using Unity.XR.OpenVR;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IViewClient
 {
     [SerializeField] CameraRig mCameraRigPrefab;
 
     private PlayerInputAction mPlayerInputAction;
 
     private MovementController mMovementController;
+    private BattlePartyComponent mBattlePartyCompontent;
+    private BattleState mBattleState;
     CameraRig mCameraRig;
     void Awake()
     {
@@ -24,12 +29,14 @@ public class Player : MonoBehaviour
         mPlayerInputAction.Gameplay.Look.performed += (context) => mCameraRig.SetLookInput(context.ReadValue<Vector2>());
         mPlayerInputAction.Gameplay.Look.canceled += (context) => mCameraRig.SetLookInput(context.ReadValue<Vector2>());
 
-        
+        mBattlePartyCompontent = GetComponent<BattlePartyComponent>();
+
+
     }
-   // void HandleLookInput(PlayerInputAction.CallBackContext context)
-   // {
-        //mCameraRig.SetLookInput(CameraRig.Something)
-   // }
+    // void HandleLookInput(PlayerInputAction.CallBackContext context)
+    // {
+    //mCameraRig.SetLookInput(CameraRig.Something)
+    // }
     void OnEnable()
     {
         mPlayerInputAction.Enable();
@@ -38,5 +45,43 @@ public class Player : MonoBehaviour
     void OnDisable()
     {
         mPlayerInputAction.Disable();
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == gameObject)
+        {
+            return;
+        }
+
+        BattlePartyComponent otherBattlePartyComponent = other.GetComponent<BattlePartyComponent>();
+        if (otherBattlePartyComponent && !IsInBattle())
+        {
+            GameMode.MainGameMode.BattleManager.StartBattle(mBattlePartyCompontent, otherBattlePartyComponent);
+            SwitchToBattleState(BattleState.InBattle);
+        }
+    }
+    private void SwitchToBattleState(BattleState battleState)
+    {
+        if (battleState == BattleState.InBattle)
+        {
+            mPlayerInputAction.Gameplay.Disable();
+        }
+        if (battleState == BattleState.Roaming)
+        {
+            mPlayerInputAction.Gameplay.Enable();
+        }
+    }
+    private bool IsInBattle()
+    {
+        return mBattleState == BattleState.InBattle;
+    }
+    public void SetViewTarget(Transform viewTarget)
+    {
+        mCameraRig.SetFollowTransform(viewTarget);
+        mCameraRig.transform.rotation = viewTarget.transform.rotation;
+    }
+    public void ResetViewAngle()
+    {
+        mCameraRig.ResetViewAngle();
     }
 }
