@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EllenBattleCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 7243812590215642564, guid: d9fdf30367c7aa344bfd60d8a4a2b5e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

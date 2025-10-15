@@ -31,6 +31,16 @@ public class BattleManager : MonoBehaviour
         mBattleCharacters = mBattleCharacters.OrderBy((battleCharacter) => { return battleCharacter.CooldownTimeRemaining; }).ToList();
 
         mBattleCharacters[0].TakeTurn();
+        Debug.Log("NextTurn");
+        float advanceTime = mBattleCharacters[0].CooldownTimeRemaining;
+        foreach (BattleCharacter battleCharacter in mBattleCharacters)
+        {
+            //battleCharacter.AdvanceCooldown(advanceTime);
+        }
+        BattleCharacter nextInTurn = mBattleCharacters[0];
+        nextInTurn.TakeTurn();
+
+        //mBattleCharacters
     }
     private void PrepParty(BattlePartyComponent party)
     {
