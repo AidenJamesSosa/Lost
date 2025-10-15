@@ -2,11 +2,13 @@ using UnityEngine;
 using System;
 using UnityEditor.Rendering.LookDev;
 using Unity.XR.OpenVR;
+using UnityEngine.InputSystem.LowLevel;
 
 public class Player : MonoBehaviour, IViewClient
 {
     [SerializeField] CameraRig mCameraRigPrefab;
-
+    [SerializeField] GameplayWidget mGameplayWidgetPrefab;
+    GameplayWidget mGameplayWidget;
     private PlayerInputAction mPlayerInputAction;
 
     private MovementController mMovementController;
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour, IViewClient
 
         mBattlePartyCompontent = GetComponent<BattlePartyComponent>();
 
+        mGameplayWidget = Instantiate(mGameplayWidgetPrefab);
 
     }
     // void HandleLookInput(PlayerInputAction.CallBackContext context)
@@ -70,6 +73,11 @@ public class Player : MonoBehaviour, IViewClient
         {
             mPlayerInputAction.Gameplay.Enable();
         }
+        mGameplayWidget.DipToBlack(1, 1, DippedToBlack);
+    }
+    void DippedToBlack()
+    {
+        Debug.Log($"Dipped To Black Called");
     }
     private bool IsInBattle()
     {

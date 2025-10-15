@@ -11,7 +11,7 @@ public class BattlePartyComponent : MonoBehaviour
     {
         mOwnerViewClient = GetComponent<IViewClient>();
     }
-    public void FinishPrep()
+    public void UpdateView()
     {
         if (mOwnerViewClient is not null)
         {

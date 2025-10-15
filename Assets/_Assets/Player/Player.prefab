@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mCameraRigPrefab: {fileID: 2103313361309080613, guid: f0196c824744e4f4697cff4d089c6cef, type: 3}
+  mGameplayWidgetPrefab: {fileID: 1690323105437598437, guid: 2f0b79a84509ef94cbca8c5622fd02c4, type: 3}
 --- !u!95 &251511214700813233
 Animator:
   serializedVersion: 7
@@ -155,7 +156,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2311357648116800983
 PrefabInstance:

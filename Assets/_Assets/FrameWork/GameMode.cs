@@ -22,7 +22,10 @@ public class GameMode : MonoBehaviour
             Destroy(gameObject);
         }
         MainGameMode = this;
-        BattleManager = new BattleManager();
+        //BattleManager = new BattleManager();
+        BattleManager = gameObject.AddComponent<BattleManager>();
+
+
 
         PlayerStart playerStart = FindFirstObjectByType<PlayerStart>();
 

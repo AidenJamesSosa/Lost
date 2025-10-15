@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec41fdeb55397d94f852597d9dd0b6c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Speed>k__BackingField: 1
+  mTurnIndicator: {fileID: 3819461934304959534}
 --- !u!1001 &1617387024832527293
 PrefabInstance:
   m_ObjectHideFlags: 0
