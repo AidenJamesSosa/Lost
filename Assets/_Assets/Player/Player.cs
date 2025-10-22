@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IViewClient
     private MovementController mMovementController;
     private BattlePartyComponent mBattlePartyCompontent;
     private BattleState mBattleState;
+    private ChildSwitcher mChildSwitcher;
     CameraRig mCameraRig;
     void Awake()
     {
@@ -32,14 +33,20 @@ public class Player : MonoBehaviour, IViewClient
         mPlayerInputAction.Gameplay.Look.canceled += (context) => mCameraRig.SetLookInput(context.ReadValue<Vector2>());
 
         mBattlePartyCompontent = GetComponent<BattlePartyComponent>();
-
+        mBattlePartyCompontent.mBattleCharacterTakeTurn += BattleCharacterTakeTurn;
+        //
         mGameplayWidget = Instantiate(mGameplayWidgetPrefab);
+        //mChildSwitcher = mGameplayWidget.GetComponent()
 
     }
     // void HandleLookInput(PlayerInputAction.CallBackContext context)
     // {
     //mCameraRig.SetLookInput(CameraRig.Something)
     // }
+    private void BattleCharacterTakeTurn(BattleCharacter character)
+    {
+        mGameplayWidget.SetFocusedCharacterInBattle(character);
+    }
     void OnEnable()
     {
         mPlayerInputAction.Enable();
@@ -65,6 +72,7 @@ public class Player : MonoBehaviour, IViewClient
     }
     private void SwitchToBattleState(BattleState battleState)
     {
+        mBattleState = battleState;
         if (battleState == BattleState.InBattle)
         {
             mPlayerInputAction.Gameplay.Disable();
@@ -78,6 +86,9 @@ public class Player : MonoBehaviour, IViewClient
     void DippedToBlack()
     {
         Debug.Log($"Dipped To Black Called");
+        mBattlePartyCompontent.UpdateView();
+        mGameplayWidget.SwitchToBattle();
+        //ChildSwitcher.SetActiveChild("Roaming Widget");
     }
     private bool IsInBattle()
     {
