@@ -180,10 +180,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mBattleCharactersPrefab:
-  - {fileID: 7857982158951559018, guid: 9906c45176c64264dbebccf5f03bddb8, type: 3}
-  - {fileID: 7857982158951559018, guid: 9906c45176c64264dbebccf5f03bddb8, type: 3}
-  - {fileID: 7857982158951559018, guid: 9906c45176c64264dbebccf5f03bddb8, type: 3}
-  - {fileID: 7857982158951559018, guid: 9906c45176c64264dbebccf5f03bddb8, type: 3}
+  - {fileID: 6895629656974413976, guid: 00ae06f4ed8d4c64bac989ab46dd6ed0, type: 3}
+  - {fileID: 6895629656974413976, guid: 00ae06f4ed8d4c64bac989ab46dd6ed0, type: 3}
+  - {fileID: 6895629656974413976, guid: 00ae06f4ed8d4c64bac989ab46dd6ed0, type: 3}
+  - {fileID: 6895629656974413976, guid: 00ae06f4ed8d4c64bac989ab46dd6ed0, type: 3}
 --- !u!95 &-2225918621710567174
 Animator:
   serializedVersion: 7
@@ -256,6 +256,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

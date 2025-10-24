@@ -16,7 +16,7 @@ public class AbilityWidget : MonoBehaviour
     public void SetAbility(Ability ability)
     {
         mAbility = ability;
-        mAbilityNameText.SetText("Name");
+        mAbilityNameText.SetText(mAbility.AbilityName);
     }
     void ActivateAbility()
     {

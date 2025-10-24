@@ -329,8 +329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mTransitionImage: {fileID: 325807497073667695}
   mMainSwitcher: {fileID: 9172085110747518483}
-  mBattleWidget: {fileID: 7662654192413433519, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
-  mRoamingWidget: {fileID: 7186575482730080463}
+  mBattleWidget: {fileID: 5346754417113489574}
+  mRoamingWidget: {fileID: 4911704726971084736}
 --- !u!1 &8199676205307560368
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +433,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleWidget
       objectReference: {fileID: 0}
+    - target: {fileID: 4826493730973650661, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826493730973650661, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826493730973650661, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4826493730973650661, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7749718157738931181, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -518,13 +534,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
+--- !u!114 &5346754417113489574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7662654192413433519, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
+  m_PrefabInstance: {fileID: 2334073742582955529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09e4cb52a3fd0224a8ba8f0761aeff19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5469846224432877028 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7749718157738931181, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
-  m_PrefabInstance: {fileID: 2334073742582955529}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7186575482730080463 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4890790313273153222, guid: aab07348fab777d4ca17b0cbdced6468, type: 3}
   m_PrefabInstance: {fileID: 2334073742582955529}
   m_PrefabAsset: {fileID: 0}

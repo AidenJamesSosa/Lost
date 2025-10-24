@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5aa5e0ec46add4eb3bb3ee73d99aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mAbilityNameText: {fileID: 0}
 --- !u!1 &4305667457508401229
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mCharacterControlWidget: {fileID: 7941441028370484762}
   mAbilityListLayoutGroup: {fileID: 870080100656418466}
-  mAbilityWidgetPrefab: {fileID: 395488377049920645}
+  mAbilityWidgetPrefab: {fileID: 395488377049920645, guid: 7154a554d98ac56419152032aa7afc6a, type: 3}
 --- !u!114 &1186543948884432734
 MonoBehaviour:
   m_ObjectHideFlags: 0

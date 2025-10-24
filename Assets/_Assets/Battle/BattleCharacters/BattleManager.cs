@@ -36,16 +36,17 @@ public class BattleManager : MonoBehaviour
     {
         if (mFirstRoundBattleCharacters.TryDequeue(out BattleCharacter nextBattleCharacter))
         {
-            if (!mBattleCharacters.Contains(nextBattleCharacter))
+            if (mBattleCharacters.Contains(nextBattleCharacter))
             {
                 nextBattleCharacter.TakeTurn();
             }
             else
             {
-                ProcessFirstRound(); 
+                ProcessFirstRound();
             }
             return;
         }
+        
         foreach(BattleCharacter battleCharacter in mBattleCharacters)
         {
             battleCharacter.OnTurnFinsihed -= ProcessFirstRound;
@@ -76,8 +77,6 @@ public class BattleManager : MonoBehaviour
         mBattleCharacters = mBattleCharacters.OrderBy((battleCharacter) => { return battleCharacter.CooldownTimeRemaining; }).
         ThenBy((battleCharacter) => { return 1/battleCharacter.Speed; }).
         ToList();
-
-        mBattleCharacters[0].TakeTurn();
     }
     private void PrepParty(BattlePartyComponent party)
     {

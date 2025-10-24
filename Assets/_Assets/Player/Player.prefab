@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mBattleCharactersPrefab:
-  - {fileID: 146505158410703710, guid: e5d2da54d20086f4596102c2337d437e, type: 3}
-  - {fileID: 146505158410703710, guid: e5d2da54d20086f4596102c2337d437e, type: 3}
+  - {fileID: 1169530878010074751, guid: e5d2da54d20086f4596102c2337d437e, type: 3}
+  - {fileID: 1169530878010074751, guid: e5d2da54d20086f4596102c2337d437e, type: 3}
 --- !u!135 &4859394810653414995
 SphereCollider:
   m_ObjectHideFlags: 0

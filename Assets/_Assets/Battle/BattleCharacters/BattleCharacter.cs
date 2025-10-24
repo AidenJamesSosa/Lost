@@ -25,6 +25,7 @@ public class BattleCharacter : MonoBehaviour
         //Speed = Speed + UnityEngine.Random.Range(0f, 1f);
         CooldownTimeRemaining = CooldownDuration;
         mTurnIndicator.SetActive(false);
+        mAbilityComponet = GetComponent<AbilityComponent>();
     }
     public void TakeTurn()
     {
