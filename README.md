@@ -30,12 +30,11 @@ The ```splayer``` class has the following responsibilities:
 
 #### SRoom
 * Reads from an array to see it's own ```SDoor``` class
-* The doors open on a room clear
+* This class opens the doors
 #### SDoor
 * When The player collides with an open door the camera instantly moves
 * The previous room is destroyed and a new one is created.
-* An array and Ranis used to simulate randomness in room generation
-
+* An array and a random range is used to simulate randomness in room generation
  ```C#
   int randomIndex = Random.Range(0, mRooms.Length);
         GameObject mRandomRoom = mRooms[randomIndex];
